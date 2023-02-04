@@ -10,9 +10,7 @@ import throttle from 'lodash.throttle';
     
     videoStorage()
 
-
     player.on('timeupdate', function (time) {
-       
         throttle (localStorage.setItem(KEY, `${time.seconds}`), 1000)
         console.log(time)});
 

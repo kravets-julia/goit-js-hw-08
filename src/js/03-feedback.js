@@ -18,10 +18,21 @@ formEl.addEventListener('submit', onFormSubmit)
 
 function onFormSubmit (e){
     e.preventDefault();
+      const formElemets = {
+        email: `${inputEl.value}`,
+        message: `${messageEl.value}`
+        }
+        const {elements: { email, message } } = e.currentTarget
+    if 
+        (  email.value === '' || message.value === '') {
+            return alert ('Please fill all the fields!')
+        }
+
     e.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY)
-    console.log({email: `${inputEl.value}`, message: `${messageEl.value}`})
+    console.log(formElemets)
    }
+
 
 function onTextInput(e){
   localStorage.setItem(STORAGE_KEY, JSON.stringify({email: `${inputEl.value}`, message: `${messageEl.value}`}))

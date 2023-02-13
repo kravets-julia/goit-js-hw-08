@@ -11,6 +11,7 @@ populateText ()
 formEl.addEventListener('input', throttle(onTextInput, 500))
 formEl.addEventListener('submit', onFormSubmit)
 
+
 function onFormSubmit (e){
     e.preventDefault();
       const formElemets = {
@@ -28,9 +29,11 @@ function onFormSubmit (e){
     console.log(formElemets)
    }
 
+
 function onTextInput(e){
   localStorage.setItem(STORAGE_KEY, JSON.stringify({email: `${inputEl.value}`, message: `${messageEl.value}`}))
 }
+
 
 function populateText (){
     const savedData = localStorage.getItem(STORAGE_KEY);

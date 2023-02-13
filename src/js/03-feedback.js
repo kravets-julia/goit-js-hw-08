@@ -18,7 +18,7 @@ function onFormSubmit (e){
         email: `${inputEl.value}`,
         message: `${messageEl.value}`
         }
-        const {elements: { email, message } } = e.currentTarget.value
+        const {elements: { email, message } } = e.value
     if 
         (  email.value === '' || message.value === '') {
             return alert ('Please fill all the fields!')
